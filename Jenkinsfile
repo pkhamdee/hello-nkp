@@ -64,25 +64,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Env validation'){
-            steps {
-                
-                 script {
-                     sh "kubectl get nodes"
-                 }
-
-            }
-        }
-
-        stage('Git clone repos'){
-            steps {
-                
-                 script {
-                     echo "skip.."
-                 }
-
-            }
-        }
 
         stage('Build and tests'){
             steps {
@@ -94,7 +75,7 @@ pipeline {
             }
         }
         
-        stage('Build container and push'){
+        stage('Docker Build'){
             steps {
                 
                  script {
